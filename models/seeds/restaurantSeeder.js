@@ -15,7 +15,7 @@ db.once('open', () => {
   // create seed data
   restaurantList.results.forEach((item) => {
     Restaurant.create({
-      id: item.id,
+      // id: item.id,
       name: item.name,
       category: item.category,
       image: item.image,

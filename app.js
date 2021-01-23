@@ -38,8 +38,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants/:restaurant_id', (req, res) => {
-  const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
-  res.render('show', { restaurant: restaurant })
+  const id = req.params.restaurant_id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
 })
 
 app.get('/new', (req, res) => {
@@ -55,6 +58,7 @@ app.get('/search', (req, res) => {
 })
 
 app.post('/restaurants', (req, res) => {
+  //const id = req.body.id
   const name = req.body.name
   const category = req.body.category
   const image = req.body.image
