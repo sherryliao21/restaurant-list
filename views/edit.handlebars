@@ -1,6 +1,6 @@
-<h1 class="mb-1 restaurant-show-title">新增餐廳</h1>
+<h1 class="mb-1 restaurant-show-title">編輯餐廳</h1>
 <div class="container d-flex justify-content-center">
-  <form action="/restaurants" method="POST">
+  <form action="/restaurants/{{ restaurant._id }}/edit" method="POST">
     <div class="row d-flex justify-content-center">
       <div class="input-groups-left col-lg-5">
         {{!-- <div class="input-groups">
@@ -9,25 +9,30 @@
         </div> --}}
         <div class="input-groups">
           <label for="name" style="margin-right: 5px;">餐廳名稱*</label>
-          <input class="form-control mb-3" type="text" placeholder="name" name="name" style="color: grey;">
+          <input class="form-control mb-3" type="text" placeholder="name" name="name" style="color: grey;"
+            value="{{ restaurant.name }}">
         </div>
         <div class="input-groups">
           <label for="category" style="margin-right: 5px;">餐廳類別*</label>
-          <input class="form-control mb-3" type="text" placeholder="category" name="category" style="color: grey;">
+          <input class="form-control mb-3" type="text" placeholder="category" name="category" style="color: grey;"
+            value="{{ restaurant.category }}">
         </div>
         <div class="input-groups">
           <label for="image" style="margin-right: 11px;">圖片連結*</label>
-          <input class="form-control mb-3" type="text" placeholder="image" name="image" style="color: grey;">
+          <input class="form-control mb-3" type="text" placeholder="image" name="image" style="color: grey;"
+            value="{{ restaurant.image }}">
+        </div>
+        <div class="input-groups">
+          <label for="location" style="margin-right: 5px;">餐廳地址*</label>
+          <input class="form-control" type="text" placeholder="location" name="location" style="color: grey;"
+            value="{{ restaurant.location }}">
         </div>
       </div>
       <div class="input-groups-right col-lg-5">
         <div class="input-groups">
-          <label for="location" style="margin-right: 5px;">餐廳地址*</label>
-          <input class="form-control mb-3" type="text" placeholder="location" name="location" style="color: grey;">
-        </div>
-        <div class="input-groups">
           <label for="phone" style="margin-right: 5px;">電話號碼*</label>
-          <input class="form-control mb-3" type="text" placeholder="phone" name="phone" style="color: grey;">
+          <input class="form-control mb-3" type="text" placeholder="phone" name="phone" style="color: grey;"
+            value="{{ restaurant.phone }}">
         </div>
         {{!-- <div class="input-groups">
           <label for="google_map" style="margin-right: 11px;">地圖連結 </label>
@@ -36,16 +41,21 @@
         {{!-- 看要不要改成下拉選單 --}}
         <div class="input-groups">
           <label for="rating" style="margin-right: 5px;">餐廳評分*</label>
-          <input class="form-control mb-3" type="text" placeholder="rating" name="rating" style="color: grey;">
+          <input class="form-control mb-3" type="text" placeholder="rating" name="rating" style="color: grey;"
+            value="{{ restaurant.rating }}">
         </div>
         <div class="input-groups">
           <label for="description" style="margin-right: 5px;">餐廳概述*</label>
-          <input class="form-control" type="text" placeholder="description" name="description" style="color: grey;">
+          <textarea rows="4" class="form-control" type="text" placeholder="description" name="description"
+            style="color: grey;">{{ restaurant.description }}</textarea>
         </div>
       </div>
     </div>
     <div class="button d-flex justify-content-center mt-3">
-      <button type="submit" class="btn btn-success">Create</button>
+      <button type="submit" class="btn btn-success">Save</button>
+      <button class="btn btn-danger" style="margin-left: 10px;">
+        <a href="/" style="text-decoration: none; color: #fff;">Back</a>
+      </button>
     </div>
   </form>
 </div>
