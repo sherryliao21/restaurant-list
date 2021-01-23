@@ -21,17 +21,28 @@ const restaurantList = require('./restaurants.json')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' })) // second parameter tells the template engine that we are gonna use the file 'main' as the default layout
 app.set('view engine', 'handlebars') // tells Express that we are setting 'handlebars' as our 'view engine'
 
+// import Restaurant model
+const Restaurant = require('./models/restaurant')
+
 // setting static files
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  // res.render('index', { restaurants: restaurantList.results })
+  Restaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.log(error))
 })
 
 app.get('/restaurants/:restaurant_id', (req, res) => {
   const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
   res.render('show', { restaurant: restaurant })
 })
+
+// app.get('/restaurants/new', (req, res) => {
+//   return res.render('new')
+// })
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
