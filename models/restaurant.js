@@ -22,7 +22,7 @@ const restaurantSchema = new Schema({
     required: true
   },
   phone: {
-    type: Number,
+    type: String,
     required: true
   },
   google_map: {
@@ -39,4 +39,4 @@ const restaurantSchema = new Schema({
   }
 })
 
-module.exports('Restaurant', restaurantSchema)
+module.exports = mongoose.model('Restaurant', restaurantSchema)
