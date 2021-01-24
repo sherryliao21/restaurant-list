@@ -21,10 +21,6 @@ const restaurantSchema = new Schema({
     type: Number,
     required: true
   },
-  // google_map: {
-  //   type: String,
-  //   required: true
-  // },
   rating: {
     type: Number,
     required: true
