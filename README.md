@@ -1,5 +1,6 @@
 # Restaurant List
-A restaurant site built with Express.js 
+![index](https://github.com/sherryliao21/A3-restaurant-list/blob/master/views/index.PNG)
+A restaurant site built with Express.js
 
 ## Features
 1. Users are able to search keywords to find restaurants
