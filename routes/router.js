@@ -87,5 +87,4 @@ router.post('/restaurants/:restaurant_id/delete', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
 module.exports = router

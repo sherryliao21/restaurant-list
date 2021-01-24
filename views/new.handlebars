@@ -3,44 +3,44 @@
   <form action="/restaurants" method="POST">
     <div class="row d-flex justify-content-center">
       <div class="input-groups-left col-lg-5">
-        {{!-- <div class="input-groups">
-          <label for="id" style="margin-right: 5px;">餐廳 ID*</label>
-          <input class="form-control mb-3" type="text" placeholder="id" name="id" style="color: grey;">
-        </div> --}}
         <div class="input-groups">
           <label for="name" style="margin-right: 5px;">餐廳名稱*</label>
-          <input class="form-control mb-3" type="text" placeholder="name" name="name" style="color: grey;">
+          <input autofocus required class="form-control mb-3" type="text" placeholder="name" name="name"
+            style="color: grey;">
         </div>
         <div class="input-groups">
           <label for="category" style="margin-right: 5px;">餐廳類別*</label>
-          <input class="form-control mb-3" type="text" placeholder="category" name="category" style="color: grey;">
+          <input required class="form-control mb-3" type="text" placeholder="category" name="category"
+            style="color: grey;">
         </div>
         <div class="input-groups">
           <label for="image" style="margin-right: 11px;">圖片連結*</label>
-          <input class="form-control mb-3" type="text" placeholder="image" name="image" style="color: grey;">
+          <input required class="form-control mb-3" type="url" placeholder="image" name="image" style="color: grey;">
         </div>
       </div>
       <div class="input-groups-right col-lg-5">
         <div class="input-groups">
           <label for="location" style="margin-right: 5px;">餐廳地址*</label>
-          <input class="form-control mb-3" type="text" placeholder="location" name="location" style="color: grey;">
+          <input required class="form-control mb-3" type="text" placeholder="location" name="location"
+            style="color: grey;">
         </div>
         <div class="input-groups">
           <label for="phone" style="margin-right: 5px;">電話號碼*</label>
-          <input class="form-control mb-3" type="text" placeholder="phone" name="phone" style="color: grey;">
+          <input required class="form-control mb-3" type="tel" placeholder="phone" name="phone" style="color: grey;">
         </div>
         {{!-- <div class="input-groups">
           <label for="google_map" style="margin-right: 11px;">地圖連結 </label>
           <input class="form-control mb-3" type="text" placeholder="google_map" name="google_map" style="color: grey;">
         </div> --}}
-        {{!-- 看要不要改成下拉選單 --}}
         <div class="input-groups">
           <label for="rating" style="margin-right: 5px;">餐廳評分*</label>
-          <input class="form-control mb-3" type="text" placeholder="rating" name="rating" style="color: grey;">
+          <input required class="form-control mb-3" type="number" placeholder="rating" name="rating"
+            style="color: grey;">
         </div>
         <div class="input-groups">
           <label for="description" style="margin-right: 5px;">餐廳概述*</label>
-          <input class="form-control" type="text" placeholder="description" name="description" style="color: grey;">
+          <input required class="form-control" type="text" placeholder="description" name="description"
+            style="color: grey;">
         </div>
       </div>
     </div>
