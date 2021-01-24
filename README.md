@@ -26,15 +26,20 @@ git clone https://github.com/sherryliao21/restaurant-list.git
 ```
 cd restaurant-list
 ```
-3. Install npm plugins
+3. Install npm add-ons
 ```
 npm install
 ```
-4. Run project
+4. Run seeder
+```
+npm run seed
+```
+
+5. Run project
 ```
 npm run dev
 ```
-5. Open your browser and type the path
+6. Open your browser and enter path
 ```
 localhost:3000
 ```
