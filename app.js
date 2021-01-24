@@ -5,9 +5,7 @@ const port = 3000
 const bodyParser = require('body-parser')
 
 const mongoose = require('mongoose')
-
 mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-
 const db = mongoose.connection
 db.on('error', () => {
   console.log('MongoDB error!')
@@ -30,7 +28,6 @@ const Restaurant = require('./models/restaurant')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  // res.render('index', { restaurants: restaurantList.results })
   Restaurant.find()
     .lean()
     .then(restaurants => res.render('index', { restaurants }))
@@ -59,14 +56,16 @@ app.get('/new', (req, res) => {
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  const restaurants = restaurantList.results.filter(restaurant => {
-    return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
-  })
-  res.render('index', { restaurants: restaurants, keyword: keyword })
+  return Restaurant.find({
+    "$or":
+      [{
+        "name": { $regex: `${keyword}`, $options: '$i' }
+      }]
+  }).lean()
+    .then(restaurants => res.render('index', { restaurants, keyword }))
+    .catch(error => console.log(error))
 })
-
 app.post('/restaurants', (req, res) => {
-  //const id = req.body.id
   const name = req.body.name
   const category = req.body.category
   const image = req.body.image
