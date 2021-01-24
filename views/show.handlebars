@@ -4,12 +4,12 @@
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
       <a href="/restaurants/{{ restaurant._id }}/edit">
-        <button class="btn btn-success">
-          Edit
+        <button class="btn" style="background-color: #b0cdd8; color: #fff;">
+          編輯
         </button>
       </a>
       <form action="/restaurants/{{ restaurant._id }}/delete" method="POST">
-        <button type="submit" class="btn btn-danger" style="margin-left: 10px;">Delete</button>
+        <button type="submit" class="btn" style="margin-left: 10px; background-color:#1f4553; color: #fff;">刪除</button>
       </form>
     </div>
   </div>

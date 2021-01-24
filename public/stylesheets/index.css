@@ -1,3 +1,7 @@
+body {
+  background-color: #f8f0f0;
+}
+
 header {
   overflow: hidden;
 }
@@ -15,15 +19,15 @@ header {
   z-index: -1;
   margin: -5px;
   height: 360px;
-  background: #dddddd center center url('https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg');
+  background: #dddddd center center url('https://cache.marriott.com/marriottassets/marriott/DXBTP/dxbtp-liv-restaurant-6592-hor-feat.jpg');
   background-size: cover;
-  filter: blur(3px);
+  /* filter: blur(3px); */
 }
 
 .search-bar .search-bar-outer {
   margin: 0 auto;
   max-width: 680px;
-  background-color: #fce2cf;
+  background-color:#4592af;
   border-radius: 8px;
   padding: 20px 30px;
   border: 0;
@@ -32,7 +36,7 @@ header {
 }
 
 .search-bar .search-bar-inner h4 {
-  color: #9b4b4b;
+  color: #f0ebeb;
 }
 
 .form-control::placeholder {
@@ -41,7 +45,7 @@ header {
 }
 
 .btn-major {
-  background-color: #9b4b4b;
+  background-color: #226089;
   color: white;
 }
 
@@ -76,6 +80,13 @@ header {
   text-align: center;
   font-size: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover{
+  box-shadow: 3px 2px 3px rgba(151, 150, 150, 0.5); 
+  position: relative;
+  left: 2px;
+  top: 2px;
 }
 
 @media screen and (max-width: 992px) {
