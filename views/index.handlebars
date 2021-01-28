@@ -1,15 +1,26 @@
 <!-- search bar -->
-<div class="container search-bar">
-  <div class="search-bar-outer">
+<div class="container">
+  <div class="search-bar-outer mt-3" style="padding: 0 90px;">
     <div class="search-bar-inner">
-      <form action="/search">
-        <h4 class="mb-2">尋找餐廳：</h4>
-        <div class="input-group">
+      <form class="row d-flex justify-content-between" action="/search">
+        <div class="input-group col-sm-6">
           <input type="text" value="{{keyword}}" name="keyword" class="form-control" placeholder="輸入餐廳、分類"
             aria-label="Restaurant Name..." aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
+        </div>
+        <div class="form col-sm-3 d-flex justify-content-between">
+          <select class="form-control" id="search-sort" name="sort">
+            <option value="餐廳清單排序" selected>餐廳排序</option>
+            <optgroup label="排序方式">
+              <option name="asc" value="A-Z">A-Z</option>
+              <option name="desc" value="Z-A">Z-A</option>
+              <option name="category" value="category">依類別</option>
+              <option name="location" value="location">依地區</option>
+            </optgroup>
+          </select>
+          <button class="btn btn-major ml-2" type="submit" id="search-button">Go</button>
         </div>
       </form>
     </div>

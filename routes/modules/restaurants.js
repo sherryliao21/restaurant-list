@@ -18,7 +18,6 @@ router.get('/:restaurant_id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-
 router.post('/', (req, res) => {
   const { name, category, image, location, phone, rating, description } = req.body
   return Restaurant.create({ name, category, image, location, phone, rating, description })
