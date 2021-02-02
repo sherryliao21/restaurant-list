@@ -9,6 +9,7 @@ A restaurant site built with Express.js
 4. Users are able to create new restaurant items
 5. Users are able to edit restaurant items
 6. Users are able to delete restaurant items
+7. Users are able to sort the list by category and name.
 
 ## Environment SetUp
 1. Node.js v14.15.4
