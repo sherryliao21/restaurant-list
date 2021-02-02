@@ -1,5 +1,5 @@
 # Restaurant List
-![index](https://github.com/sherryliao21/A3-restaurant-list/blob/master/views/index.PNG)
+![Imgur](https://imgur.com/lyRqdTl)
 A restaurant site built with Express.js
 
 ## Features
