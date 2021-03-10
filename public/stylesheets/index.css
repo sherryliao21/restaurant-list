@@ -54,11 +54,15 @@ header {
   border-color: #ced4da;
 }
 
-.card {
+.text-secondary:hover {
+  text-decoration: none;
+}
+
+.card-restaurant {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card img{
+.card-restaurant img{
   height: 180px;
 }
 
@@ -82,7 +86,7 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.card:hover{
+.card-restaurant:hover{
   box-shadow: 3px 2px 3px rgba(151, 150, 150, 0.5); 
   position: relative;
   left: 2px;
