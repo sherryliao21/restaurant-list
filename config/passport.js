@@ -8,13 +8,18 @@ module.exports = app => {
   app.use(passport.session())
   // strategy settings
   passport.use(new LocalStrategy({
-    usernameField: 'email' // instead of the default username identification, we are using email to identify the user
-  }, (email, password, done) => {
+    usernameField: 'email', // instead of the default username identification, we are using email to identify the user
+    passReqToCallback: true
+  }, (req, email, password, done) => {
     User.findOne({ email })
       .then(user => {
-        if (!user) return done(null, false, { message: 'This user is not registered!' })
+        if (!user) {
+          req.flash('warning_msg', '此信箱未註冊，請重新輸入！')
+          return done(null, false)
+        }
         if (user.password !== password) {
-          return done(null, false, { message: 'Email or password is incorrect!' })
+          req.flash('warning_msg', '信箱或密碼不正確，請重新輸入！')
+          return done(null, false)
         }
         return done(null, user)
       })
