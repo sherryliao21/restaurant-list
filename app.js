@@ -27,7 +27,12 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
 usePassport(app)
-
+// add a middleware that stores the commonly-used local variables { isAuthenticated, user } for templates to use
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  next()
+})
 app.use(routes)
 
 app.listen(PORT, (req, res) => {
