@@ -1,15 +1,20 @@
 const express = require('express')
-const app = express()
-const PORT = 3000
-
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const routes = require('./routes')
 const usePassport = require('./config/passport')
 require('./config/mongoose')
+
+const app = express()
+const PORT = process.env.PORT
 
 // view engine settings
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -17,7 +22,7 @@ app.set('view engine', 'handlebars')
 
 // session settings
 app.use(session({
-  secret: 'restaurantListSecret', // session 用來驗證 session id 的字串
+  secret: process.env.SESSION_SECRET, // session 用來驗證 session id 的字串
   resave: false, // 每一次與使用者互動後，不會強制把 session 更新到 session store 裡
   saveUninitialized: true // 每一次與使用者互動後，強制把 session 更新到 session store 裡
 }))
