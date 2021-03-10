@@ -28,6 +28,12 @@ const restaurantSchema = new Schema({
   description: {
     type: String,
     required: true
+  },
+  userId: {
+    type: Schema.Types.ObjectId, // set relations between two data collections
+    ref: 'User', // reference to the User model
+    index: true, // use this key as a searching index
+    required: true
   }
 })
 

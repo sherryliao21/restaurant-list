@@ -3,7 +3,8 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
-  Restaurant.find()
+  const userId = req.user._id
+  Restaurant.find({ userId })
     .lean()
     .sort({ name: 'asc' })
     .then(restaurants => res.render('index', { restaurants }))
@@ -15,35 +16,37 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/search', (req, res) => {
+  const userId = req.user._id
   const keyword = req.query.keyword
   const sort = req.query.sort
   const defaultSort = sort === 'A-Z'
   if (sort === 'category') {
-    return Restaurant.find()
+    return Restaurant.find({ userId })
       .lean()
       .sort({ category: 'asc' })
       .then(restaurants => res.render('index', { restaurants, keyword }))
       .catch(error => console.log(error))
   } else if (sort === 'location') {
-    return Restaurant.find()
+    return Restaurant.find({ userId })
       .lean()
       .sort({ location: 'asc' })
       .then(restaurants => res.render('index', { restaurants, keyword }))
       .catch(error => console.log(error))
   } else if (defaultSort) {
-    return Restaurant.find()
+    return Restaurant.find({ userId })
       .lean()
       .sort({ name: 'asc' })
       .then(restaurants => res.render('index', { restaurants, keyword }))
       .catch(error => console.log(error))
   } else if (sort === 'Z-A') {
-    return Restaurant.find()
+    return Restaurant.find({ userId })
       .lean()
       .sort({ name: 'desc' })
       .then(restaurants => res.render('index', { restaurants, keyword }))
       .catch(error => console.log(error))
   } else {
     return Restaurant.find({
+      userId,
       "$or":
         [{
           "name": { $regex: `${keyword}`, $options: '$i' }
