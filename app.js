@@ -7,9 +7,20 @@ const exphbs = require('express-handlebars')
 require('./config/mongoose')
 const methodOverride = require('method-override')
 const routes = require('./routes')
+const session = require('express-session')
 
+// view engine settings
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+// session settings
+app.use(session({
+  secret: 'restaurantListSecret', // session 用來驗證 session id 的字串
+  resave: false, // 每一次與使用者互動後，不會強制把 session 更新到 session store 裡
+  saveUninitialized: true // 每一次與使用者互動後，強制把 session 更新到 session store 裡
+}))
+
+// middleware settings
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(methodOverride('_method'))
