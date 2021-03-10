@@ -1,5 +1,6 @@
 # Restaurant List
 ![Imgur](https://imgur.com/lyRqdTl.png)
+![Imgur](https://imgur.com/n5swJCl.png)
 A restaurant site built with Express.js
 
 ## Features
