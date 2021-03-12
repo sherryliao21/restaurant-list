@@ -27,7 +27,8 @@
         </div>
         <div class="input-groups">
           <label for="phone" style="margin-right: 5px;">電話號碼*</label>
-          <input required class="form-control mb-3" type="tel" placeholder="phone" name="phone" style="color: grey;">
+          <input required class="form-control mb-3" type="tel" pattern="[0]{1}[0-9]{9}" placeholder="phone" name="phone"
+            style="color: grey;">
         </div>
         {{!-- <div class="input-groups">
           <label for="google_map" style="margin-right: 11px;">地圖連結 </label>
