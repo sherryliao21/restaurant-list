@@ -14,7 +14,7 @@ const usePassport = require('./config/passport')
 require('./config/mongoose')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 
 // view engine settings
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
