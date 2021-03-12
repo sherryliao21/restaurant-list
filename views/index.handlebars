@@ -53,37 +53,44 @@
           </div>
         </a>
         {{#each restaurants}}
-        <a href="/restaurants/{{ this._id }}" class="text-secondary">
-          <div class="card card-restaurant mb-3">
-            <img class="card-img-top" src="{{ this.image }}" alt="{{ this.name }}">
-            <div class="card-body p-3 d-flex justify-content-between">
-              <div class="card-body-info">
-                <h6 class="card-title mb-1">{{ this.name }}</h6>
+        <div class="card card-restaurant mb-3">
+          <a href="/restaurants/{{ this._id }}" class="text-secondary"><img class="card-img-top" src="{{ this.image }}"
+              alt="{{ this.name }}"></a>
+          <div class="card-body p-3 d-flex justify-content-between">
+            <div class="card-body-info">
+              <h6 class="card-title mb-1">{{ this.name }}</h6>
 
-                <div class="restaurant-category mb-1">
-                  <i class="fas fa-utensils pr-2"></i>{{ this.category }}
-                </div>
+              <div class="restaurant-category mb-1">
+                <i class="fas fa-utensils pr-2"></i>{{ this.category }}
+              </div>
 
-                <span class="badge badge-pill badge-danger font-weight-normal" style="background-color: #4592af;">
-                  {{ this.rating }}
-                  <i class="fas fa-star fa-xs"></i>
-                </span>
-              </div>
-              <div class="card-body-control">
-                <a href="./restaurants/{{ this._id }}/edit" style="text-decoration: none;">
-                  <button class="btn btn-light"
-                    style="font-size: 15px; padding: 5px 10px; margin-bottom: 3px; background-color:#4592af; color: #fff;">編輯</button>
-                </a>
-                <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST">
-                  <button type="submit" class="btn"
-                    style="font-size: 15px; padding: 5px 10px; background-color:#1f4553; color: #fff;">刪除</button>
-                </form>
-              </div>
+              <span class="badge badge-pill badge-danger font-weight-normal" style="background-color: #4592af;">
+                {{ this.rating }}
+                <i class="fas fa-star fa-xs"></i>
+              </span>
+            </div>
+            <div class="card-body-control">
+              <a href="./restaurants/{{ this._id }}/edit" style="text-decoration: none;">
+                <button class="btn btn-light"
+                  style="font-size: 15px; padding: 5px 10px; margin-bottom: 3px; background-color:#4592af; color: #fff;">編輯</button>
+              </a>
+              <form action="./restaurants/{{ this._id }}?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-delete"
+                  style="font-size: 15px; padding: 5px 10px; background-color:#1f4553; color: #fff;"
+                  onclick="return confirmDelete()">刪除</button>
+              </form>
             </div>
           </div>
-        </a>
+        </div>
         {{/each}}
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function confirmDelete() {
+    if (confirm('確定要刪除這間餐廳？')) return true
+    return false
+  }
+</script>

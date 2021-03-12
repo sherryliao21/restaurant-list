@@ -17,8 +17,8 @@ header {
 .banner {
   position: relative;
   z-index: -1;
-  margin: -5px;
   height: 360px;
+  width: 100%;
   background: #dddddd center center url('https://cache.marriott.com/marriottassets/marriott/DXBTP/dxbtp-liv-restaurant-6592-hor-feat.jpg');
   background-size: cover;
   /* filter: blur(3px); */
@@ -86,12 +86,12 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.card-restaurant:hover{
+/* .card-restaurant:hover{
   box-shadow: 3px 2px 3px rgba(151, 150, 150, 0.5); 
   position: relative;
   left: 2px;
   top: 2px;
-}
+} */
 
 @media screen and (max-width: 992px) {
   
