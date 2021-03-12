@@ -1,11 +1,12 @@
 const bcrypt = require('bcryptjs')
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
 const db = require('../../config/mongoose')
 const Restaurant = require('../restaurant')
-const restaurantList = require('../../restaurants.json')
+const restaurantList = require('../restaurants.json')
 const User = require('../user')
 
 const SEED_USERS = [{
@@ -17,8 +18,7 @@ const SEED_USERS = [{
 }]
 
 db.once('open', () => {
-  // forEach 裡的函式可傳入三個參數(item, index, array)
-  SEED_USERS.forEach((user, index) => {
+  SEED_USERS.forEach((user, index) => {  // The callback in forEach accepts 3 parameters (item, index, array)
     bcrypt
       .genSalt(10)
       .then(salt => bcrypt.hash(user.password, salt))
