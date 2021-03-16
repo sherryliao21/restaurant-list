@@ -1,0 +1,36 @@
+.btn-major {
+  background-color: #226089;
+  color: white;
+}
+
+.banner {
+  position: relative;
+  z-index: -1;
+  height: 360px;
+  width: 100%;
+  background: #dddddd center center url('https://cache.marriott.com/marriottassets/marriott/DXBTP/dxbtp-liv-restaurant-6592-hor-feat.jpg');
+  background-size: cover;
+  /* filter: blur(3px); */
+}
+
+.restaurant-show-title {
+  position: relative;
+  top: -100px;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* edit.handlebars, new.handlebars */
+.input {
+  color: grey;
+}
+
+.btn-create {
+  font-size: 15px; 
+  padding: 5px 10px;
+  margin-bottom: 3px; 
+  background-color:#4592af; 
+  color: #fff;
+}

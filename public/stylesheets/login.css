@@ -1,0 +1,9 @@
+/* login.handlebars, register.handlebars */
+.btn-major {
+  background-color: #226089;
+  color: white;
+}
+
+.row-login-register {
+  margin-top: 100px;
+}

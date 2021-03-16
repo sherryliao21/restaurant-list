@@ -1,0 +1,43 @@
+body {
+  background-color: #f8f0f0;
+}
+
+header {
+  overflow: hidden;
+}
+
+/* main.handlebars */
+.navbar {
+  position: fixed; 
+  width: 100%;
+}
+
+.navbar .navbar-brand {
+  color: #4592af;
+}
+
+.navbar .navbar-brand:hover {
+  color: #226089;
+}
+
+@media screen and (max-width: 992px) {
+  
+  .card img{
+    height: 115px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .restaurant-show-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  
+  .card img{
+    height: auto;
+  }
+  
+}
