@@ -6,6 +6,12 @@ header {
   overflow: hidden;
 }
 
+/* main.handlebars */
+.navbar {
+  position: fixed; 
+  width: 100%;
+}
+
 .navbar .navbar-brand {
   color: #4592af;
 }
@@ -14,6 +20,7 @@ header {
   color: #226089;
 }
 
+/* index.handlebars */
 .banner {
   position: relative;
   z-index: -1;
@@ -24,18 +31,11 @@ header {
   /* filter: blur(3px); */
 }
 
-.search-bar .search-bar-outer {
-  margin: 0 auto;
-  max-width: 680px;
-  background-color:#4592af;
-  border-radius: 8px;
-  padding: 20px 30px;
-  border: 0;
-  margin-top: -60px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+.search-bar-outer {
+  padding: 0 90px;
 }
 
-.search-bar .search-bar-inner h4 {
+.search-bar-inner h4 {
   color: #f0ebeb;
 }
 
@@ -62,8 +62,54 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+#add-picture-background {
+  width: 100%; 
+  height: 100%; 
+  padding: 38px; 
+  background-color: rgb(221, 217, 217);
+}
+
+#add-picture-title {
+  color: #fff;
+  text-shadow: 3px 2px #9e9999;
+}
+
+.fa-plus-circle {
+  color: #fff; 
+  font-size: 50px; 
+  text-shadow: 2px 2px #9e9999;
+}
+
+.badge {
+  background-color: #4592af;
+}
+
 .card img{
   height: 180px;
+}
+
+.edit-btn-link {
+  text-decoration: none;
+}
+
+.edit-btn {
+  font-size: 15px; 
+  padding: 5px 10px; 
+  margin-bottom: 3px; 
+  background-color:#4592af; 
+  color: #fff;
+}
+
+.edit-btn:hover {
+  color:#28363b;
+  background-color:#4592af; 
+}
+
+.btn-delete {
+  font-size: 15px; 
+  padding: 5px 10px; 
+  background-color:#1f4553; 
+  color: #fff;
 }
 
 .card-title{
@@ -77,6 +123,7 @@ header {
   font-size: 0.8rem;
 }
 
+/* show.handlebars */
 .restaurant-show-title {
   position: relative;
   top: -100px;
@@ -86,12 +133,46 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* .card-restaurant:hover{
-  box-shadow: 3px 2px 3px rgba(151, 150, 150, 0.5); 
-  position: relative;
-  left: 2px;
-  top: 2px;
-} */
+#show-btn-delete {
+  margin-left: 10px;
+  font-size: 15px; 
+  padding: 5px 10px; 
+  background-color:#1f4553; 
+  color: #fff;
+}
+
+#restaurant-img {
+  max-width: 600px;
+}
+
+/* edit.handlebars, new.handlebars */
+.input {
+  color: grey;
+}
+
+.btn-create {
+  font-size: 15px; 
+  padding: 5px 10px;
+  margin-bottom: 3px; 
+  background-color:#4592af; 
+  color: #fff;
+}
+
+.btn-save {
+  background-color: #b0cdd8; 
+  color: #fff;
+}
+
+.btn-back {
+  margin-left: 10px; 
+  background-color:#1f4553; 
+  color: #fff;
+}
+
+/* login.handlebars, register.handlebars */
+.row-login-register {
+  margin-top: 100px;
+}
 
 @media screen and (max-width: 992px) {
   

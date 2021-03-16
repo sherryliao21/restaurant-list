@@ -5,50 +5,43 @@
     <div class="row d-flex justify-content-center">
       <div class="input-groups-left col-lg-5">
         <div class="input-groups">
-          <label for="name" style="margin-right: 5px;">餐廳名稱*</label>
+          <label for="name">餐廳名稱*</label>
           <input autofocus required class="form-control mb-3" type="text" placeholder="ex: McDonald's" name="name"
-            style="color: grey;" maxlength="10">
+            class="input" maxlength="10">
         </div>
         <div class="input-groups">
-          <label for="category" style="margin-right: 5px;">餐廳類別*</label>
+          <label for="category">餐廳類別*</label>
           <input required class="form-control mb-3" type="text" placeholder="ex: Fast food" name="category"
-            style="color: grey;" maxlength="10">
+            class="input" maxlength="10">
         </div>
         <div class="input-groups">
-          <label for="image" style="margin-right: 11px;">圖片連結*</label>
-          <input required class="form-control mb-3" type="url" placeholder="Image url" name="image"
-            style="color: grey;">
+          <label for="image">圖片連結*</label>
+          <input required class="form-control mb-3" type="url" placeholder="Image url" name="image" class="input">
         </div>
       </div>
       <div class="input-groups-right col-lg-5">
         <div class="input-groups">
-          <label for="location" style="margin-right: 5px;">餐廳地址*</label>
-          <input required class="form-control mb-3" type="text" placeholder="Location" name="location"
-            style="color: grey;">
+          <label for="location">餐廳地址*</label>
+          <input required class="form-control mb-3" type="text" placeholder="Location" name="location" class="input">
         </div>
         <div class="input-groups">
-          <label for="phone" style="margin-right: 5px;">電話號碼*</label>
+          <label for="phone">電話號碼*</label>
           <input required class="form-control mb-3" type="tel" pattern="[0]{1}[0-9]{9}" placeholder="ex: 0912345678"
-            name="phone" style="color: grey;">
-        </div>
-        {{!-- <div class="input-groups">
-          <label for="google_map" style="margin-right: 11px;">地圖連結 </label>
-          <input class="form-control mb-3" type="text" placeholder="google_map" name="google_map" style="color: grey;">
-        </div> --}}
-        <div class="input-groups">
-          <label for="rating" style="margin-right: 5px;">餐廳評分*</label>
-          <input required class="form-control mb-3" type="number" placeholder="ex: 4.5" name="rating"
-            style="color: grey;">
+            name="phone" class="input">
         </div>
         <div class="input-groups">
-          <label for="description" style="margin-right: 5px;">餐廳概述*</label>
+          <label for="rating">餐廳評分*</label>
+          <input required class="form-control mb-3" type="number" placeholder="ex: 4.5" name="rating" class="input">
+        </div>
+        <div class="input-groups">
+          <label for="description">餐廳概述*</label>
           <input required class="form-control" type="text" placeholder="Description" name="description" maxlength="50"
-            style="color: grey;">
+            class="input">
         </div>
       </div>
     </div>
     <div class="button d-flex justify-content-center mt-3">
-      <button type="submit" class="btn" style="background-color: #b0cdd8; color: #fff;">建立</button>
+      <button type="submit" class="btn btn-create">建立</button>
     </div>
   </form>
 </div>

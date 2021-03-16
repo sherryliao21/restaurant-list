@@ -5,47 +5,47 @@
     <div class="row d-flex justify-content-center">
       <div class="input-groups-left col-lg-5">
         <div class="input-groups">
-          <label for="name" style="margin-right: 5px;">餐廳名稱*</label>
-          <input autofocus required class="form-control mb-3" type="text" placeholder="name" name="name"
-            style="color: grey;" value="{{ restaurant.name }}" maxlength="10">
+          <label for="name">餐廳名稱*</label>
+          <input autofocus required class="form-control mb-3" type="text" placeholder="name" name="name" class="input"
+            value="{{ restaurant.name }}" maxlength="10">
         </div>
         <div class="input-groups">
-          <label for="category" style="margin-right: 5px;">餐廳類別*</label>
-          <input required class="form-control mb-3" type="text" placeholder="category" name="category"
-            style="color: grey;" value="{{ restaurant.category }}" maxlength="10">
+          <label for="category">餐廳類別*</label>
+          <input required class="form-control mb-3" type="text" placeholder="category" name="category" class="input"
+            value="{{ restaurant.category }}" maxlength="10">
         </div>
         <div class="input-groups">
-          <label for="image" style="margin-right: 11px;">圖片連結*</label>
-          <input required class="form-control mb-3" type="text" placeholder="image" name="image" style="color: grey;"
+          <label for="image">圖片連結*</label>
+          <input required class="form-control mb-3" type="text" placeholder="image" name="image" class="input"
             value="{{ restaurant.image }}">
         </div>
         <div class="input-groups">
-          <label for="location" style="margin-right: 5px;">餐廳地址*</label>
-          <input required class="form-control" type="text" placeholder="location" name="location" style="color: grey;"
+          <label for="location">餐廳地址*</label>
+          <input required class="form-control" type="text" placeholder="location" name="location" class="input"
             value="{{ restaurant.location }}">
         </div>
       </div>
       <div class="input-groups-right col-lg-5">
         <div class="input-groups">
-          <label for="phone" style="margin-right: 5px;">電話號碼*</label>
+          <label for="phone">電話號碼*</label>
           <input required class="form-control mb-3" type="tel" pattern="[0]{1}[0-9]{9}" placeholder="phone" name="phone"
-            style="color: grey;" value="{{ restaurant.phone }}">
+            class="input" value="{{ restaurant.phone }}">
         </div>
         <div class="input-groups">
-          <label for="rating" style="margin-right: 5px;">餐廳評分*</label>
+          <label for="rating">餐廳評分*</label>
           <input class="form-control mb-3" type="number" min="1.0" max="5.0" step="0.1" placeholder="rating"
-            name="rating" style="color: grey;" value="{{ restaurant.rating }}">
+            name="rating" class="input" value="{{ restaurant.rating }}">
         </div>
         <div class="input-groups">
-          <label for="description" style="margin-right: 5px;">餐廳概述*</label>
+          <label for="description">餐廳概述*</label>
           <textarea required rows="4" class="form-control" type="text" placeholder="description" name="description"
-            style="color: grey;" maxlength="50">{{ restaurant.description }}</textarea>
+            class="input" maxlength="50">{{ restaurant.description }}</textarea>
         </div>
       </div>
     </div>
     <div class="button d-flex justify-content-center mt-3">
-      <button type="submit" class="btn" style="background-color: #b0cdd8; color: #fff;">儲存</button>
-      <button class="btn" style="margin-left: 10px; background-color:#1f4553; color: #fff;">
+      <button type="submit" class="btn btn-save">儲存</button>
+      <button class="btn btn-back">
         <a href="/" style="text-decoration: none; color: #fff;">返回</a>
       </button>
     </div>
